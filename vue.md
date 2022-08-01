@@ -2,7 +2,6 @@
 
 [Prince Makavana](https://nodesource.com/products/nsolid)
 
-
 ## Basics
 
 ---
