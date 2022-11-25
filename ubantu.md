@@ -29,3 +29,19 @@ UnInstall Xampp
         -cd /opt/lampp
         -sudo ./uninstall
         -sudo rm -r /opt/lampp
+
+Make Custom Command :
+        - sudo gedit ~/.bashrc
+        - "Add Command As per Old (alias)"
+        - source ~/.bashrc
+
+
+Custom Command For this os
+    - firebase deploy (for react add to firebase)
+    - lexical (for run lexical programs) lexical= 'echo " Enter File Name = " ; read filename ; flex $filename ; gcc lex.yy.c ; ./a.out;
+
+
+Other UseFull Command
+    - Make Disk R to R/W : sudo mount -o remount,uid=1000,gid=1000,rw /dev/sdb3
+    - Remove Directories : rm -r DIR_NAME
+    - sudo dpkg -i filename.deb 
