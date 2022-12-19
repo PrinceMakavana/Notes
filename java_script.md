@@ -1,52 +1,101 @@
-----------------------------------------------------------------------------------------------------------------------
-For alert Massage
------
-alert("Your Text");
-----------------------------------------------------------------------------------------------------------------------
-For Print in Devloper-Tool
------
-consol  (For information ->  search :- MDN consol)
-----------------------------------------------------------------------------------------------------------------------
-   The console object provides access to the browser's debugging console (e.g. the Web Console in Firefox). The specifics of how it works varies from browser to browser, but there is a de facto set of features that are typically provided.
-----------------------------------------------------------------------------------------------------------------------
-Methods of Concole  
------
-console.assert(); -> Log a message and stack trace to console if the first argument is false.
-console.clear();  -> Clear the console
-console.countReset(); -> Resets the value of the counter with the given label.
-console.debug(); -> Outputs a message to the console with the log level "debug".
+# **<p align="center"> <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="drawing" style="width:50px;"/>  Java Script <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="drawing" style="width:50px;"/></p>**
 
-console.dir(); -> Displays an interactive listing of the properties of a specified JavaScript object.This listinglets you use disclosure triangles to examine the contents of child objects
+[Prince Makavana](https://princemakavana61.me/)
 
-console.dirxml(); -> Displays an XML/HTML Element representation of the specified object if possible or the JavaScript Object view if it is not possible.
+<br />
 
-console.error(); -> Outputs an error message. You may use string substitution and additional arguments with this method.
+---
 
-console.group(); -> Creates a new inline group, indenting all following output by another level. To move back out a level, call groupEnd().
+## UseFull ShortCuts
 
-console.groupCollapsed(); -> Creates a new inline group, indenting all following output by another level. However, unlike group() this starts with the inline group collapsed requiring the use of a disclosure button to expand it. To move back out a level, call groupEnd().
+---
+<br />
 
-console.groupEnd(); -> Exits the current inline group.
+-   ### **convert Number(Intger) to Array**
+    > '`${x}`.split('').map(Number)'
+    
+    > ``
+    
+    > ``
 
-console.log(); -> For general output of logging information. You may use string substitution and additional arguments with this method.
+    **Note :**
 
-console.profile(); -> Starts the browser's built-in profiler (for example, the Firefox performance tool). You can specify an optional name for the profile
+<br />
 
-console.profileEnd(); -> Stops the profiler. You can see the resulting profile in the browser's performance tool (for example, the Firefox performance tool).
+---
 
-console.table() -> Displays tabular data as a table
+## Methods of Concole
 
-console.time() -> Starts a timer with a name specified as an input parameter. Up to 10,000 simultaneous timers can run on a given page
+---
+<br />
 
-console.timeEnd() -> Stops the specified timer and logs the elapsed time in seconds since it started
+-   ### **console.assert();**
+    > 'Log a message and stack trace to console if the first argument is false.'
+    
+-   ### **console.clear();**
+    > 'Clear the console'
 
-console.timeLog() -> Logs the value of the specified timer to the console.
+-   ### **console.countReset();**
+    > 'Resets the value of the counter with the given label.'
 
-console.timeStamp() -> Adds a marker to the browser's Timeline or Waterfall tool.
+-   ### **console.debug();**
+    > 'Outputs a message to the console with the log level "debug".'
 
-console.trace() -> Outputs a stack trace.
+-   ### **console.dir();**
+    > 'Displays an interactive listing of the properties of a specified JavaScript object.This listinglets you use disclosure triangles to examine the contents of child objects'
+    
+-   ### **console.dir();**
+    > 'Displays an interactive listing of the properties of a specified JavaScript object.This listinglets you use disclosure triangles to examine the contents of child objects'
 
-console.warn() -> Outputs a warning message. You may use string substitution and additional arguments with this method
+-   ### **console.dirxml();** 
+    > 'Displays an XML/HTML Element representation of the specified object if possible or the JavaScript Object view if it is not possible.'
+
+-   ### **console.error();** 
+    > 'Outputs an error message. You may use string substitution and additional arguments with this method.'
+
+-   ### **console.group();** 
+    > 'Creates a new inline group, indenting all following output by another level. To move back out a level, call groupEnd().'
+
+-   ### **console.groupEnd();** 
+    > 'Exits the current inline group.'
+
+-   ### **console.log();** 
+    > 'For general output of logging information. You may use string substitution and additional arguments with this method.'
+
+-   ### **console.profile();** 
+    > 'Starts the browser's built-in profiler (for example, the Firefox performance tool). You can specify an optional name for the profile'
+
+-   ### **console.profileEnd();** 
+    > 'Stops the profiler. You can see the resulting profile in the browser's performance tool (for example, the Firefox performance tool).'
+
+-   ### **console.table()** 
+    > 'Displays tabular data as a table'
+
+-   ### **console.time()** 
+    > 'Starts a timer with a name specified as an input parameter. Up to 10,000 simultaneous timers can run on a given page'
+
+-   ### **console.timeEnd()** 
+    > 'Stops the specified timer and logs the elapsed time in seconds since it started'
+
+-   ### **console.timeLog()** 
+    > 'Logs the value of the specified timer to the console.'
+
+-   ### **console.timeStamp()** 
+    > 'Adds a marker to the browser's Timeline or Waterfall tool.'
+
+-   ### **console.trace()** 
+    > 'Outputs a stack trace.'
+
+-   ### **console.warn()** 
+    > 'Outputs a warning message. You may use string substitution and additional arguments with this method'
+
+
+-   ### **console.groupCollapsed();** 
+    > 'Creates a new inline group, indenting all following output by another level. However, unlike group() this starts with the inline group collapsed requiring the use of a disclosure button to expand it. To move back out a level, call groupEnd().'
+
+    **Note :**
+
+
 
 ----------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------
