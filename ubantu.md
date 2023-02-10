@@ -39,6 +39,7 @@
 # Custom Command For this os
     - firebase deploy (for react add to firebase)
     - lexical (for run lexical programs) lexical= 'echo " Enter File Name = " ; read filename ; flex $filename ; gcc lex.yy.c ; ./a.out;
+    - git-init-folder= 'echo " Enter Repository Name : "  ; read repository ; echo " Enter UserName : " ; read username ;  echo " Enter Email : " ; read email ;  echo " Enter Personal Token : " ; read personalToken ; echo "Repository Name  : $repository UserName :   $username Email :   $email Personal Token :  $personalToken " ;  git remote set-url origin https://github.com/$username/$repository.git ; git config --local user.name "$username" ; git config --local user.email "$email" ; git config --local user.password "$personalToken" ; git config credential.helper store'
 
 
 # Other UseFull Command
