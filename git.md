@@ -129,9 +129,9 @@
   ### git stash pop :  <br />
 >  It Will Pop out your changes which is store using stash and ask you to which changes you want to add <br />
 
-> git stash
-> git pull
-> git stash pop
-> git marge
-> git push
+> git stash <br />
+> git pull <br />
+> git stash pop <br />
+> git marge <br />
+> git push <br />
 
