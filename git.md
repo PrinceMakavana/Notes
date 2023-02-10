@@ -114,3 +114,24 @@
 
 >  git config --global --unset credential.helper <br />
 
+<br />
+
+---
+
+## Use Of Stash 
+
+---
+<br /> 
+
+  ### git stash :  <br />
+>  It Will Store Your All changes in the local so that you can take pull and not get conflict error at push <br />
+
+  ### git stash pop :  <br />
+>  It Will Pop out your changes which is store using stash and ask you to which changes you want to add <br />
+
+> git stash
+> git pull
+> git stash pop
+> git marge
+> git push
+
