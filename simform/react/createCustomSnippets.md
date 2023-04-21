@@ -1,0 +1,1 @@
+step 1 : File -> Preferencess -> use Snippets -> New Global snnipet File
