@@ -70,7 +70,8 @@
   let compney: string = "Simform"
   let isPublished: boolean = true
   let x: any = 'Hello'
-
+  let y: unknown = 'Hello'
+  let z: never = 'Hello'
   let age: number
   age = 30
 
@@ -323,3 +324,30 @@
   numArr.push('hello')
 
 ```
+<br>
+
+----
+
+## Utility Types
+
+----
+
+<br>
+
+  - utility types are a mechanism in typescript , you can use to create another type from an exsisting type.  
+
+- ### Partial<Type> : it's make everything in it optional
+  - ```js
+      interface MyUser {
+        name : string;
+        id : string;
+        email?:string;
+      }
+
+      type MyUserOptional = Partial<MyUser>
+    ```
+- ### Required<Type> : it's make everything in it optional
+    ```js
+      type MyUserOptional = Required<MyUser>
+    
+    ```

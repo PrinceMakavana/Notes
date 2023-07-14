@@ -122,6 +122,7 @@ What is Cloud Computing :
 - ## Shared Responsibility Modal
 
   - <img src="./assets/shared_reponce_model.png" />
+  - <img src="./assets/shared_res.png" />
 
 - ## IAM (Identity and Access Management)
 
@@ -150,7 +151,7 @@ What is Cloud Computing :
 
       - IAM Roles :
         - Group of Permision = Roles
-        - <img src="./assets/aws_cli.png" />
+        - <img src="./assets/iam_role.png" />
 
     - Multy Password Authentication - MFA
 
@@ -160,6 +161,7 @@ What is Cloud Computing :
       - <img src="./assets/mfa_type.png" />
 
     - There Are Three Way to access AWS
+
       - AWS Management Console (Protect by password)
       - AWS command line interface (CLI) (Protect by Access Key)
       - AWS software Development Key (SDK) (Protect By Access key)
@@ -168,3 +170,74 @@ What is Cloud Computing :
       - Access key ID ~= username
       - Secrat Access key ~= password
         - <img src="./assets/aws_cli.png" />
+
+    - IAM guide-lines
+
+      - <img src="./assets/iam_guide_line.png" />
+
+    - IAM Summary
+      - <img src="./assets/iam_summary.png" />
+
+- ## Amazon EC2
+
+  - EC2 = Elastic Computer Cloud = IaaS
+  - Mainly use for :
+
+    - Renting virtual machine (EC2)
+    - storing data in virtual machine (EBC)
+    - Distribute load accross machine (EBS)
+    - Scaling the services using an auto-scaling group (ASG)
+
+  - EC2 sizing & configuration option
+
+    - OS : linux , windows , & Mac OS
+    - How much compute power and cores
+    - How much rendom access memory
+    - How much storage space:
+      - Network-attached(EBS&EFS)
+      - hardware (EC2 instance store)
+      - Network Card : speed of the card, public Ip address
+      - Firewall rules : security group
+      - Bootstrap Script : EC2 user Data
+    - **Bootstrapping** :
+
+      - lunching commands when machine start
+      - that script **runs only ones** at the instance **first start**
+      - Used For : - install update - install software - download common file
+
+      - <img src="./assets/instance_type.png" />
+      - [https://aws.amazon.com/ec2/instance-types/](AWS Instance Types)
+
+    - **EC2 Instance Type** :
+
+      - **General Puepose (t2)** :
+        - Balance Between (t2) :
+          - Compute , Memory , Network
+      - **Compute Optimized (c6g)** :
+        - Reduire High lavel performance processer
+      - **Memory Optimized (R6g)** : Fast performance for workloads that process large data sets in memory
+      - **Storage Optimized (i3)** : require high Storage-intensive tasks that require high , sequential read and write acess to large data
+
+    - **Security Groups Deeper Dive** :
+      - security groups are acting as a firewall on ec2 instances
+      - can be attached with multiple instances
+      - locked down to a region /VPC combination
+      - Does live "outside" the EC2 - if traffic is blocked the EC2 instances won't see it
+      - good to maintain one seprate security group for SSH access
+      - if your application is not accessible then it;s security group issue
+      - if application gives "connection error" then it's an application error or it's not launched
+      - All inbound traffic is blocked by default
+      - all outbound traffic is authorised by default
+      - <img src="./assets/how_firewall_works.png" />
+
+    - **Security Ports to Know for Exam** :
+      - 22 = SSH (secure shell) - log into a linux instance
+      - 21 = FTP (file transfer protocol) - upload files into a file share
+      - 22 = SFTP (secure file transfer protocol) - upload file using ssh 
+      - 80 = HTTP - access unsecured website
+      - 443 = HTTPS - access secured website
+      - 3389 = RDP (Remote Desktop Protocol) - log intp windows instance
+
+
+  - EC2 Instace Purchashing Oprions 
+    - <img src="./assets/ec2_purche_option.png" />
