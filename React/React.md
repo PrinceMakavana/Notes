@@ -16,7 +16,7 @@
     - Just Part Of Project,
     - Mobile Apps -> React Native ,
     - Desktop app -> Electron ,
-    - server side render -> Next Js )
+    - server side render -> Next Js 
   - Performance
   - Declarative
     - Components
@@ -221,7 +221,7 @@ root.render(
 
   - Higher-Order Component (HOC) is a pattern that allows you to reuse component logic by wrapping a component with another component.
   - HOCs are not built-in components but rather functions that take a component as input and return an enhanced version of that component.
-
+Higher-Order Component (HOC) is a pattern that allows you to reuse component logic by wrapping a component with an
   ```js
   import React from "react";
   const withLogger = (WrappedComponent) => {

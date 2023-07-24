@@ -25,7 +25,7 @@ console.log("apply");
 printFullName.apply(name, ["one Home", "second Home"]);
 //bind
 console.log("bind");
-const printFullNameBind = printFullName.bind(nmae, ["one Home", "second Home"]);
+const printFullNameBind = printFullName.bind(name, ["one Home", "second Home"]);
 console.log(printFullNameBind());
 ```
 
@@ -269,7 +269,7 @@ function checkPrime(num) {
   if (num == 2 || num == 3 || num == 5 || num == 7) {
     return true;
   } else {
-    for (let index = 2; index < 10; index++) {
+    for (let index = 2; index < Math.sqrt(num); index++) {
       if (Number.isInteger(num / index)) {
         return false;
       }
@@ -295,7 +295,7 @@ function checkPrime(num) {
   if (num == 2 || num == 3 || num == 5 || num == 7) {
     return true;
   } else {
-    for (let index = 2; index < 10; index++) {
+    for (let index = 2; index < Math.sqrt(num); index++) {
       if (Number.isInteger(num / index)) {
         return false;
       }
@@ -480,3 +480,59 @@ console.log(obj, obj2);
 ```
 
 ## get only unique from array
+
+## find key value from object without dot
+
+```js
+const myObj = {
+  name: "vanshita",
+  age: 20,
+  address: {
+    city: "gnr",
+  },
+};
+const pathFinder = (obj, path) => {
+  let ans;
+  for (let key in obj) {
+    if (key == path) {
+      return obj[key];
+    } else {
+      if (typeof obj[key] === "object") ans = pathFinder(obj[key], path);
+    }
+  }
+  return ans;
+};
+
+console.log(pathFinder(myObj, "city"));
+```
+
+##
+
+    ```js
+    const users = [
+      { fname: "vanshita", lname: "shah", age: 20 },
+      { fname: "kashyap", lname: "patel", age: 21 },
+      { fname: "prince", lname: "makavana", age: 22 },
+      { fname: "gunjan", lname: "patel", age: 20 },
+    ];
+    const ansObj = {};
+    const ans = users.reduce((acc, curr) => {
+      if (acc[curr.age]) {
+        acc[curr.age] = acc[curr.age] + 1;
+      } else {
+        acc[curr.age] = 1;
+      }
+      return acc;
+    }, {});
+    console.log(ans);
+    // {20: 2, 21: 1, 22: 1}
+    ```
+
+const flatAraay = (arr) => arr.reduce((acc , val) => {
+    if(val instanceof Array){
+        return acc.concat(flatAraay(val))
+    }else {
+        acc.push(val);
+        return acc;
+    }
+}, []);
