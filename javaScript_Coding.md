@@ -506,7 +506,7 @@ const pathFinder = (obj, path) => {
 console.log(pathFinder(myObj, "city"));
 ```
 
-##
+## Reduce Array
 
     ```js
     const users = [
@@ -527,12 +527,18 @@ console.log(pathFinder(myObj, "city"));
     console.log(ans);
     // {20: 2, 21: 1, 22: 1}
     ```
+## Flat Array
 
-const flatAraay = (arr) => arr.reduce((acc , val) => {
-    if(val instanceof Array){
-        return acc.concat(flatAraay(val))
-    }else {
-        acc.push(val);
-        return acc;
-    }
-}, []);
+  ```js
+  const flatAraay = (arr) => arr.reduce((acc , val) => {
+      if(val instanceof Array){
+          return acc.concat(flatAraay(val))
+      }else {
+          acc.push(val);
+          return acc;
+      }
+  }, []);
+  ```
+## Convert Your Table To Array
+ -> [Check Here](./unique_files/tableToArray.html)
+

@@ -214,6 +214,16 @@
 
 > `git log main..child` : shows the un marged commits 
 
+
+<br />
+
+## Clone Private Repository
+
+---
+<br /> 
+
+> `git clone https://<pat>@github.com/<your account or organization>/<repo>.git`
+
 <br />
 
 ## Custom Commands 
