@@ -30,7 +30,8 @@ Usefull Commands
     Event(EventEmitter) : TO Create Event
     HTTP : TO Run In Browser  
 
-
-
-
-
+Error : Node.js configure: Found Python 3.11.4... Please use python3.10 in mac
+ Solution : 
+    How to open terminal in Rosetta2 mode: Go to Application -> Right click on terminal app -> Get Info -> Select "Open using Rosetta" -> Restart Terminal
+    In Terminal, write -> arch -x86_64 zsh
+    

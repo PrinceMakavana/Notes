@@ -567,3 +567,12 @@ mounted() {
 
 > - **vue add quasar**
 
+## Error Vue
+   - invalid host header
+    
+      - create vue.config.js
+      - module.exports = {
+          devServer: {
+            disableHostCheck: true
+            }
+        };

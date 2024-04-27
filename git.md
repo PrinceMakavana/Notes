@@ -222,9 +222,22 @@
 ---
 <br /> 
 
-> `git clone https://<pat>@github.com/<your account or organization>/<repo>.git`
+> `git clone https://<userName:personal_access_token>@github.com/<your account or organization>/<repo>.git`
 
 <br />
+
+## Error Resolve
+
+---
+<br /> 
+
+- <b>You have divergent branches and need to specify how to reconcile them.</b>
+
+  - Get Pull or Push your branch with remain your commits history
+    - > `git pull --rebase origin <Branch_Name>`
+
+  - Make It fast Forward
+    - > `git pull --ff-only origin <Branch_Name>`
 
 ## Custom Commands 
 
