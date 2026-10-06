@@ -1,0 +1,277 @@
+:root {
+  color-scheme: light;
+
+  /* ---- layout ---- */
+  --sidebar-width: 272px;
+  /* Horizontal offset the main column sits behind. Becomes 0 when the sidebar
+       is collapsed, so the centring maths below follows it. */
+  --layout-offset: var(--sidebar-width);
+  --prose-max: 740px; /* ~74ch at 15px Inter, inside the 75ch target */
+  --article-max: var(--prose-max); /* widened on large screens, see below */
+  --toc-width: 200px;
+  --toc-gutter: 56px;
+  /* The article and its "On this page" rail are centred together as one unit. */
+  --reading-max: calc(
+    var(--article-max) + var(--toc-gutter) + var(--toc-width)
+  );
+  --reading-pad: max(
+    48px,
+    (100vw - var(--layout-offset) - var(--reading-max)) / 2
+  );
+
+  /* ---- light palette (default) ---- */
+  --bg: #fafaf7;
+  --bg-sidebar: #f2f1ec;
+  --bg-card: #ffffff;
+  --bg-code: #f6f5f0;
+  --bg-hover: rgba(0, 0, 0, 0.035);
+  --bg-active: #ebf5ee;
+  --text: #1a1a18;
+  --text-secondary: #6b6b66;
+  --text-muted: #6e6e68; /* WCAG AA (4.5:1) against --bg-sidebar and --bg */
+  --accent: #2d7a50;
+  --accent-light: #e8f5ed;
+  --accent-dim: #2d7a5022;
+  --border: #e5e4df;
+  --border-light: #eeede8;
+  --code-keyword: #7c3aed;
+  --code-string: #059669;
+  --code-comment: #9ca3af;
+  --code-func: #2563eb;
+  --code-number: #d97706;
+  --progress-bar: #2d7a50;
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --radius: 10px;
+  --transition: 200ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  --search-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%239C9C96' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='M21 21l-4.35-4.35'/%3E%3C/svg%3E");
+
+  /* ---- dark palette values, applied by the two rules below ---- */
+  --dark-bg: #141413;
+  --dark-bg-sidebar: #1a1a18;
+  --dark-bg-card: #1e1e1c;
+  --dark-bg-code: #1e1e1c;
+  --dark-bg-hover: rgba(255, 255, 255, 0.04);
+  --dark-bg-active: #1a2e22;
+  --dark-text: #e8e8e3;
+  --dark-text-secondary: #9c9c96;
+  --dark-text-muted: #82827c; /* WCAG AA (4.5:1) against --bg-sidebar and --bg */
+  --dark-accent: #4ade80;
+  --dark-accent-light: #1a2e22;
+  --dark-accent-dim: #4ade8018;
+  --dark-border: #2a2a27;
+  --dark-border-light: #232320;
+  --dark-code-keyword: #a78bfa;
+  --dark-code-string: #34d399;
+  --dark-code-comment: #6b7280;
+  --dark-code-func: #60a5fa;
+  --dark-code-number: #fbbf24;
+  --dark-progress-bar: #4ade80;
+  --dark-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --dark-search-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%236B6B66' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='M21 21l-4.35-4.35'/%3E%3C/svg%3E");
+}
+
+/* Path 1: follow the OS, unless the reader has pinned light. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: var(--dark-bg);
+    --bg-sidebar: var(--dark-bg-sidebar);
+    --bg-card: var(--dark-bg-card);
+    --bg-code: var(--dark-bg-code);
+    --bg-hover: var(--dark-bg-hover);
+    --bg-active: var(--dark-bg-active);
+    --text: var(--dark-text);
+    --text-secondary: var(--dark-text-secondary);
+    --text-muted: var(--dark-text-muted);
+    --accent: var(--dark-accent);
+    --accent-light: var(--dark-accent-light);
+    --accent-dim: var(--dark-accent-dim);
+    --border: var(--dark-border);
+    --border-light: var(--dark-border-light);
+    --code-keyword: var(--dark-code-keyword);
+    --code-string: var(--dark-code-string);
+    --code-comment: var(--dark-code-comment);
+    --code-func: var(--dark-code-func);
+    --code-number: var(--dark-code-number);
+    --progress-bar: var(--dark-progress-bar);
+    --shadow-md: var(--dark-shadow-md);
+    --search-icon: var(--dark-search-icon);
+  }
+}
+
+/* Path 2: the reader explicitly chose dark. Wins over the OS in both
+     directions, since [data-theme="light"] is excluded from path 1. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: var(--dark-bg);
+  --bg-sidebar: var(--dark-bg-sidebar);
+  --bg-card: var(--dark-bg-card);
+  --bg-code: var(--dark-bg-code);
+  --bg-hover: var(--dark-bg-hover);
+  --bg-active: var(--dark-bg-active);
+  --text: var(--dark-text);
+  --text-secondary: var(--dark-text-secondary);
+  --text-muted: var(--dark-text-muted);
+  --accent: var(--dark-accent);
+  --accent-light: var(--dark-accent-light);
+  --accent-dim: var(--dark-accent-dim);
+  --border: var(--dark-border);
+  --border-light: var(--dark-border-light);
+  --code-keyword: var(--dark-code-keyword);
+  --code-string: var(--dark-code-string);
+  --code-comment: var(--dark-code-comment);
+  --code-func: var(--dark-code-func);
+  --code-number: var(--dark-code-number);
+  --progress-bar: var(--dark-progress-bar);
+  --shadow-md: var(--dark-shadow-md);
+  --search-icon: var(--dark-search-icon);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+}
+body {
+  overflow-x: hidden;
+}
+
+/* Docsify v5 toggles .sidebar.show (not body.close from v4). */
+body:not(:has(.sidebar.show)) {
+  --layout-offset: 0px;
+}
+
+.sidebar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  background: var(--bg-sidebar);
+  color: var(--text);
+  translate: calc(-1 * var(--sidebar-width));
+  visibility: hidden;
+  transition:
+    translate var(--transition),
+    visibility var(--transition);
+}
+.sidebar.show {
+  translate: 0;
+  visibility: visible;
+}
+
+.app-name,
+.cp-trigger-wrap,
+.pt-overall,
+.theme-switch-wrap {
+  flex: 0 0 auto;
+}
+.sidebar-nav {
+  flex: 1 1 auto;
+  overflow-y: auto;
+}
+
+.markdown-section {
+  color: var(--accent);
+}
+.theme-switch-wrap {
+  padding: 10px 14px 14px;
+  background: var(--bg-sidebar);
+  border: 1px solid var(--border-light);
+}
+.theme-trigger {
+  display: flex;
+  gap: 9px;
+  width: 100%;
+  min-height: 38px;
+  align-items: center;
+  padding: 7px 10px;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: 9px;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color var(--transition),
+    color var(--transition);
+}
+
+.sidebar-toggle {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 15;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: 9px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: left var(--transition);
+}
+body:has(.sidebar.show) .sidebar-toggle {
+  left: calc(var(--sidebar-width) + 14px);
+}
+
+.sidebar-toggle-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  width: 16px;
+}
+.sidebar-toggle span {
+  display: block;
+  width: 16px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--text-secondary);
+}
+
+/* .sidebar
+.sidebar-nav
+.content
+.markdown-section
+.sidebar-toggle */
+
+.content {
+  margin-left: var(--sidebar-width);
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* if sidebar is hidden, set the content margin-left to 0 */
+body:not(:has(.sidebar.show)) .content {
+  margin-left: 0;
+}
+.markdown-section {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 48px 100px;
+}
